@@ -16,7 +16,7 @@ def remove_bad_jar(match):
 
 def is_valid_jar(jar_filename):
     with open(os.devnull, 'wb') as devnull:
-        return Popen(['zip', '-T', jar_filename], stdout=devnull, stderr=devnull).wait()
+        return Popen(['zip', '-T', jar_filename], stdout=devnull, stderr=devnull).wait() == 0
 
 def main():
     for line in fileinput.input():
